@@ -114,7 +114,13 @@ public class Menu {
         System.out.println("Enter license plate:");
         String licensePlate = scanner.nextLine();
         System.out.println("Enter year:");
-        int year = numberchecker(scanner.nextInt());
+        try { 
+            int year=Integer.parseInt(scanner.nextLine()); 
+        } catch(NumberFormatException e) { 
+            System.out.println("Please input an Integer");
+        }
+
+        int year = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Enter make:");
         String make = scanner.nextLine();
@@ -213,15 +219,6 @@ public class Menu {
 		System.out.println("Showing revenue");
 	}
 	
-	public static void numberchecker(int i) {
-        try {
-            int a = Integer.parseInt("1a");
-            System.out.println(a);
-        } catch (NumberFormatException nfe) {
-            System.out.println("NumberFormat Exception: invalid input string");
-        }
-        System.out.println("Continuing execution...");
-    }
 	
 }
 	
